@@ -1,11 +1,41 @@
 .App {
   text-align: center;
 }
-.card{
+
+.pokemonList {
   display: flex;
+  flex-wrap: wrap;
 }
-.cardContainer{
-  background-color:blue;
+
+.card {
+  margin: 30px;
+  list-style: none;
+}
+
+.cardContainer {
+  background-color:cyan;
   border: solid 2px black;
-  width: 100px;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.pokemonName {
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  height: 50px;
+  text-transform: capitalize;
+}
+
+.pokemonsType {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.pokemonType {
+  margin: 0;
+  color: white;
+  background-color: grey;
+  border-radius: 3px;
 }

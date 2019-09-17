@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Pokemon extends React.Component {
   render() {
@@ -10,9 +11,9 @@ class Pokemon extends React.Component {
         </div>
         <ul className="pokemonsType">
 
-          {this.props.types.map(type => {
+          {this.props.types.map((type, index) => {
             return (
-              <li className="pokemonType" key={this.props.id}>
+              <li className="pokemonType" key={index}>
                 {type}
               </li>
             );
@@ -22,6 +23,14 @@ class Pokemon extends React.Component {
       </div>
     );
   }
+}
+
+Pokemon.propTypes = {
+  url: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  types: PropTypes.arrayOf(PropTypes.string).isRequired,
+  id: PropTypes.number.isRequired
+
 }
 
 export default Pokemon;
