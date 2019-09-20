@@ -8,15 +8,26 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      pokemons: pokemons
+      pokemons: pokemons,
+      fav: []
     };
+
+    this.getFav = this.getFav.bind(this);
+  }
+
+  getFav(event) {
+    const fav = event.currentTarget.value;
+    console.log(fav);
+    this.setState = {
+      fav: fav
+    }
   }
 
   render() {
     return (
       <div className="App">
         <h1 className="App__title">Mi lista de pokemon</h1>
-        <PokeList pokemons={this.state.pokemons} />
+        <PokeList pokemons={this.state.pokemons} getFav={this.getFav}/>
       </div>
     );
   }
